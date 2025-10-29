@@ -1,0 +1,107 @@
+/* General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Body Styling */
+body {
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(135deg, #f0f4ff, #dbeafe);
+  color: #333;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+}
+
+/* Header */
+header {
+  text-align: center;
+  margin: 2rem 0 1rem;
+}
+
+.title {
+  font-size: 2.5rem;
+  color: #1e3a8a;
+}
+
+.subtitle {
+  font-size: 1rem;
+  color: #555;
+}
+
+/* Gallery Grid */
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  width: 90%;
+  max-width: 1200px;
+  margin: 2rem auto;
+}
+
+/* Individual Figure Styling */
+figure {
+  position: relative;
+  overflow: hidden;
+  border-radius: 15px;
+  background: #fff;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+figure:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+}
+
+/* Image Styling */
+figure img {
+  width: 100%;
+  height: 230px;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.5s ease;
+}
+
+figure:hover img {
+  transform: scale(1.1);
+}
+
+/* Caption Styling */
+figcaption {
+  text-align: center;
+  font-size: 1rem;
+  font-weight: 500;
+  padding: 0.8rem;
+  background: #1e3a8a;
+  color: white;
+  letter-spacing: 0.5px;
+}
+
+/* Footer */
+footer {
+  background: #1e3a8a;
+  color: white;
+  text-align: center;
+  width: 100%;
+  padding: 1rem 0;
+  margin-top: auto;
+  font-size: 0.9rem;
+  letter-spacing: 0.3px;
+}
+
+/* Responsive Design */
+@media (max-width: 700px) {
+  .title {
+    font-size: 2rem;
+  }
+  figure img {
+    height: 200px;
+  }
+  figcaption {
+    font-size: 0.9rem;
+  }
+}
