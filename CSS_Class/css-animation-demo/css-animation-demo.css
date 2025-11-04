@@ -1,0 +1,117 @@
+body {
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(135deg, #e0f2fe, #fdf2f8);
+  margin: 0;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  overflow: hidden;
+  position: relative;
+}
+
+.container {
+  max-width: 850px;
+  background: rgba(255, 255, 255, 0.85);
+  padding: 40px;
+  border-radius: 20px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(10px);
+}
+
+h1 {
+  color: #1e3a8a;
+  font-size: 2rem;
+  margin-bottom: 10px;
+  letter-spacing: 1px;
+}
+
+p {
+  color: #475569;
+  margin-bottom: 40px;
+  font-size: 1.1rem;
+}
+
+.animations {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 60px;
+}
+
+/* Moving Box */
+.anim-box {
+  width: 90px;
+  height: 90px;
+  background: linear-gradient(135deg, #3b82f6, #60a5fa);
+  border-radius: 15px;
+  animation: moveBox 3s ease-in-out infinite alternate;
+}
+
+@keyframes moveBox {
+  from { transform: translateX(0) rotate(0deg); }
+  to { transform: translateX(160px) rotate(20deg); }
+}
+
+/* Bouncing Ball */
+.anim-ball {
+  width: 70px;
+  height: 70px;
+  background: radial-gradient(circle at 30% 30%, #f87171, #be123c);
+  border-radius: 50%;
+  animation: bounceBall 1.5s ease-in-out infinite;
+  box-shadow: 0 8px 15px rgba(244, 63, 94, 0.4);
+}
+
+@keyframes bounceBall {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-90px); }
+}
+
+/* Color Changing Text */
+.anim-text {
+  font-size: 2em;
+  font-weight: 600;
+  letter-spacing: 1px;
+  animation: colorShift 3s ease-in-out infinite alternate;
+}
+
+@keyframes colorShift {
+  0% { color: #2563eb; transform: scale(1); }
+  50% { color: #16a34a; transform: scale(1.1); }
+  100% { color: #f59e0b; transform: scale(1); }
+}
+
+/* Watermark */
+body::after {
+  content: "© 2025 CSS Animation Showcase";
+  position: fixed;
+  bottom: 10px;
+  right: 20px;
+  font-size: 12px;
+  color: rgba(0, 0, 0, 0.45);
+  letter-spacing: 0.5px;
+}
+
+/* Responsive Design */
+@media (max-width: 700px) {
+  .container {
+    width: 90%;
+    padding: 30px;
+  }
+
+  .animations {
+    flex-direction: column;
+    gap: 40px;
+  }
+
+  h1 {
+    font-size: 1.7rem;
+  }
+
+  .anim-text {
+    font-size: 1.6rem;
+  }
+}
