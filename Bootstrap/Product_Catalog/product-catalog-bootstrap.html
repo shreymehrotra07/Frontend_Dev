@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Product Catalog — Bootstrap Grid</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="product-catalog-style.css">
+  </head>
+
+  <body class="bg-light text-dark">
+
+    <header class="text-center py-5">
+      <h1 class="fw-bold text-white mb-3">Tech Store</h1>
+      <p class="text-light mb-0">Discover the latest gadgets at unbeatable prices</p>
+    </header>
+
+    <main class="container py-5">
+      <div class="row g-4">
+        <div class="col-12 col-sm-6 col-md-3">
+          <div class="card product-card shadow-sm h-100">
+            <img src="image.png" class="card-img-top" alt="Gaming Mouse">
+            <div class="card-body text-center">
+              <h5 class="card-title fw-bold">Gaming Mouse</h5>
+              <p class="card-text text-success fw-semibold">$49</p>
+              <button class="btn btn-primary w-100">Add to Cart</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-12 col-sm-6 col-md-3">
+          <div class="card product-card shadow-sm h-100">
+            <img src="image copy.png" class="card-img-top" alt="Headphones">
+            <div class="card-body text-center">
+              <h5 class="card-title fw-bold">Wireless Headphones</h5>
+              <p class="card-text text-success fw-semibold">$99</p>
+              <button class="btn btn-primary w-100">Add to Cart</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-12 col-sm-6 col-md-3">
+          <div class="card product-card shadow-sm h-100">
+            <img src="image copy 4.png" class="card-img-top" alt="Smartwatch">
+            <div class="card-body text-center">
+              <h5 class="card-title fw-bold">Smartwatch</h5>
+              <p class="card-text text-success fw-semibold">$129</p>
+              <button class="btn btn-primary w-100">Add to Cart</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-12 col-sm-6 col-md-3">
+          <div class="card product-card shadow-sm h-100">
+            <img src="image copy 3.png" class="card-img-top" alt="Bluetooth Speaker">
+            <div class="card-body text-center">
+              <h5 class="card-title fw-bold">Bluetooth Speaker</h5>
+              <p class="card-text text-success fw-semibold">$79</p>
+              <button class="btn btn-primary w-100">Add to Cart</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <footer class="text-center py-4">
+      <small class="text-muted">© <span id="year"></span> Tech Store | All Rights Reserved</small>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+      document.getElementById("year").textContent = new Date().getFullYear();
+    </script>
+  </body>
+</html>
