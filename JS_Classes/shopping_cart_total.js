@@ -1,31 +1,34 @@
 class Cart {
-    constructor() {
-        this.items = [];
+  constructor() {
+    this.items = [];
+  }
+
+  addItem(name, price, quantity) {
+    this.items.push({ name, price, quantity });
+  }
+
+  getTotal() {
+    return this.items.reduce(
+      (sum, item) => sum + item.price * item.quantity,
+      0
+    );
+  }
+
+  applyCoupon(code) {
+    const pattern = /^(SAVE|DISC)(\d{1,2})$/;
+    const match = code.match(pattern);
+
+    if (!match) {
+      return { valid: false, finalTotal: this.getTotal() };
     }
 
-    addItem(name, price, quantity) {
-        this.items.push({ name, price, quantity });
-    }
+    const discountPercent = Number(match[2]);
+    const total = this.getTotal();
+    const discountAmount = (total * discountPercent) / 100;
+    const finalTotal = total - discountAmount;
 
-    getTotal() {
-        return this.items.reduce((sum, item) => sum + item.price * item.quantity, 0);
-    }
-
-    applyCoupon(code) {
-        const pattern = /^(SAVE|DISC)(\d{1,2})$/;
-        const match = code.match(pattern);
-
-        if (!match) {
-            return { valid: false, finalTotal: this.getTotal() };
-        }
-
-        const discountPercent = Number(match[2]);
-        const total = this.getTotal();
-        const discountAmount = (total * discountPercent) / 100;
-        const finalTotal = total - discountAmount;
-
-        return { valid: true, finalTotal };
-    }
+    return { valid: true, finalTotal };
+  }
 }
 
 const cart = new Cart();
@@ -40,7 +43,7 @@ console.log("Total:", total);
 const couponResult = cart.applyCoupon("SAVE20");
 
 if (couponResult.valid) {
-    console.log("Final Total after discount:", couponResult.finalTotal);
+  console.log("Final Total after discount:", couponResult.finalTotal);
 } else {
-    console.log("Invalid Coupon");
+  console.log("Invalid Coupon");
 }
